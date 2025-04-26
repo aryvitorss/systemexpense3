@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="card-title"> {{title}} </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="expense-table">
+      @for(colun of displayedColumns; track colun){
+        <ng-container matColumnDef={{colun}}>
+          <th mat-header-cell *matHeaderCellDef class="th-th-alinhamento">{{colun.toUpperCase()}}</th>
+            <td mat-cell *matCellDef="let expense"  class="th-th-alinhamento">{{expense[colun]}}
+              @if(colun.includes('actions')){
+                <button mat-flat-button class="edit-btn" [routerLink]="['/edit', expense.id]">Edit</button>
+                <button mat-flat-button class="delete-btn" (click)="deleteExpense(expense.id)">Delete</button>
+              }
+            </td>
+        </ng-container>
+      }
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+  </mat-card-content>
+  <mat-card-content class="card-actions">
+    <mat-paginator class="mat-paginator" [length]="totalItems"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5,10,15,20]"
+    (page)="onPageChange($event)">
+    </mat-paginator>
+  </mat-card-content>
+</mat-card>

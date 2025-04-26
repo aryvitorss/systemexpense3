@@ -1,0 +1,37 @@
+:host {
+
+.card-actions{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mat-paginator{
+    width: 100%;
+}
+
+.edit-btn {
+  background-color: lightblue !important;
+  color: #222 !important;
+  border-radius: 5%;
+}
+
+.delete-btn {
+  background-color: lightcoral !important;
+  color: #fff !important;
+  border-radius: 5%;
+}
+
+.mat-mdc-header-row{
+  background-color: rgb(35, 96, 175) !important;
+  color:#fff !important;
+}
+
+.card-title{
+    padding-bottom: 20px;
+}
+
+.th-th-alinhamento{
+  text-align: center;
+}
+
+}

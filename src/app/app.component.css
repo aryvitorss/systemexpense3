@@ -1,0 +1,27 @@
+:host{
+.sidenav{
+  width:250px;
+  border-radius: 0px !important ;
+  background-color: rgb(35, 96, 175) !important;
+  color:#fff !important;
+}
+
+.main-content{
+  background-color:#f4f4f4;
+  padding: 20px;
+}
+
+.app-title{
+  margin-left:35%;
+}
+
+.mat-toolbar{
+  background-color: rgb(35, 96, 175) !important;
+  color:#fff !important;
+}
+
+.fundo{
+  background-color: aquamarine;
+
+}
+}

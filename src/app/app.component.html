@@ -1,0 +1,28 @@
+<mat-sidenav-container class="sidebar-container">
+  <mat-sidenav
+  #sidenav
+  mode="side"
+  opened="true"
+  class="sidenav">
+
+<mat-nav-list>
+    @for(itemnav of listaNav; track itemnav){
+      <mat-list-item routerLink={{itemnav}}>
+        {{itemnav.replace("/", "").toUpperCase()}}
+      </mat-list-item>
+    }
+</mat-nav-list>
+</mat-sidenav>
+
+<mat-sidenav-content class="main-content">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>{{tipeIcon}}</mat-icon>
+    </button>
+    <span class="app-title">{{title}}</span>
+  </mat-toolbar>
+
+  <router-outlet />
+</mat-sidenav-content>
+</mat-sidenav-container>
+
