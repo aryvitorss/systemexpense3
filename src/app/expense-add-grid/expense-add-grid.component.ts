@@ -1,3 +1,4 @@
+import { Expense } from './../modelo/expense';
 import { Component, effect, inject, OnInit, ViewChild, viewChild, viewChildren } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -6,7 +7,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ExpenseService } from '../services/expense.service';
-import { Expense } from '../modelo/expense';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -25,6 +25,7 @@ export class ExpenseAddGridComponent{
   dataSource = new MatTableDataSource<Expense>();
   totalItems: number = 0;
   pageSize: number = 10;
+  totalexpenseAmount: number = 0;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -37,6 +38,7 @@ constructor() {
     const expenses = this.expenses();
     this.dataSource.data = expenses;
     this.totalItems = expenses.length;
+    this.totalexpenseAmount = this.countTotalAmount(expenses);
   })
 }
 
@@ -53,6 +55,16 @@ ngAfterViewInit(){
 deleteExpense(expenseId:string){
   this.expenseService.deleteExpense(expenseId);
   this.snackBar.open("Expense Deleted Sucessfully");
+  setInterval(() => {
+    this.snackBar.dismiss();
+  }, 10000);
+}
+
+countTotalAmount(expenseCountAmout:Expense[]):number{
+  expenseCountAmout.forEach(expcount => {
+    this.totalexpenseAmount+=expcount.amount
+  })
+  return this.totalexpenseAmount;
 }
 
 }

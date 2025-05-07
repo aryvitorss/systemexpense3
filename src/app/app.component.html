@@ -5,24 +5,45 @@
   opened="true"
   class="sidenav">
 
-<mat-nav-list>
-    @for(itemnav of listaNav; track itemnav){
-      <mat-list-item routerLink={{itemnav}}>
-        {{itemnav.replace("/", "").toUpperCase()}}
-      </mat-list-item>
+  <mat-form-field >
+    <mat-label>::: Expense Actions :::</mat-label>
+    <input type="text"
+    placeholder="choose options"
+    aria-label=""
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+
+      @for(itemnav of filteredOptions | async; track itemnav){
+        <mat-option [value]="itemnav" style="color: white">
+            <mat-icon>{{tipeIcon}}</mat-icon><i routerLink={{itemnav}}>{{itemnav.replace("/", "").toUpperCase()}}</i></mat-option>
+      }
+
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <!-- @if(this.myControl.value == ''){
+    <mat-nav-list>
+        @for(itemnav of listaNav; track itemnav){
+          <mat-list-item routerLink={{itemnav}}>
+            <mat-icon>{{tipeIcon}}</mat-icon> {{itemnav.replace("/", "").toUpperCase()}}
+          </mat-list-item>
+          }
+    </mat-nav-list>
     }
-</mat-nav-list>
+  -->
 </mat-sidenav>
 
 <mat-sidenav-content class="main-content">
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="app-title-img">
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>{{tipeIcon}}</mat-icon>
     </button>
-    <span class="app-title">{{title}}</span>
+    <span class="app-title" [routerLink]="['/onboarding']">{{title}}</span>
   </mat-toolbar>
 
   <router-outlet />
 </mat-sidenav-content>
 </mat-sidenav-container>
-
+<app-expense-footer></app-expense-footer>

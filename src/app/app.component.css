@@ -1,18 +1,37 @@
 :host{
 .sidenav{
   width:250px;
+  text-align: center;
   border-radius: 0px !important ;
   background-color: rgb(35, 96, 175) !important;
   color:#fff !important;
+  background-image: url('../assets/img_dinheiro_3.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+
 }
 
 .main-content{
-  background-color:#f4f4f4;
+  background-image: url('../assets/fundo_1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   padding: 20px;
 }
 
 .app-title{
   margin-left:35%;
+  text-shadow: black 0 -10px;
+  font-weight: bold;
+  font-style: italic;
+}
+.app-title-img{
+  background-image: url('../assets/img_porquinho.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: auto;
 }
 
 .mat-toolbar{
@@ -24,4 +43,5 @@
   background-color: aquamarine;
 
 }
+
 }

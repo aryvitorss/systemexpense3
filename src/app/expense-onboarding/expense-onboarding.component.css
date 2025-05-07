@@ -1,0 +1,23 @@
+:host{
+
+  div{
+    justify-content: center;
+    color:darkblue !important;
+  }
+
+  mat-card{
+  justify-content: center;
+  font-style: italic;
+  background-color: darkblue !important;
+  color:#fff !important;
+  padding: 1% !important;
+  margin:1%!important;
+  width:20% !important;
+  height: 5% !important;
+  border-radius: 30px !important;
+  }
+
+  mat-icon{
+    width: 100% !important;
+  }
+}

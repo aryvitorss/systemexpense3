@@ -1,3 +1,4 @@
+<mat-progress-bar mode="determinate" value={{this.statusBarraDeProgresso}}></mat-progress-bar>
 <mat-card class="add-edit-card">
   <mat-card-header>
     <mat-card-title class="card-title">
@@ -10,8 +11,8 @@
           <div class="form-row">
             <mat-form-field>
               <mat-label>Enter Title</mat-label>
-              <input matInput formControlName="title" placeholder="Enter Title" />
-              <mat-error *ngIf="expenseForm.get('title')?.hasError('required')">
+              <input matInput formControlName="title" placeholder="Enter Title" (change)="statusBarraProgresso('titulo')" />
+              <mat-error *ngIf="expenseForm.get('title')?.hasError('required')" >
                 Enter title for expense
               </mat-error>
             </mat-form-field>
@@ -20,7 +21,7 @@
           <div class="form-row">
             <mat-form-field>
               <mat-label>Enter Amount</mat-label>
-              <input matInput formControlName="amount" placeholder="Enter Amount" />
+              <input matInput formControlName="amount" placeholder="Enter Amount" (change)="statusBarraProgresso('amount')" />
               <mat-error *ngIf="expenseForm.get('amount')?.hasError('required')">
                 Enter Amount for expense
               </mat-error>
@@ -35,7 +36,7 @@
               <mat-label>Enter Category</mat-label>
               <mat-select formControlName="category">
               @for( category of categorias; track category){
-                    <mat-option [value]="category" style="background-color: lightblue;">{{category}}</mat-option>
+                    <mat-option [value]="category" (click)="statusBarraProgresso('category')" style="background-color: lightblue;">{{category}}</mat-option>
                   }
               </mat-select>
               @if(expenseForm.get('category')?.hasError('required')){<mat-error>
@@ -49,9 +50,9 @@
             <mat-form-field >
               <mat-label>Select Date </mat-label>
 
-              <input matInput [matDatepicker]="picker" formControlName="date"/>
+              <input matInput [matDatepicker]="picker" formControlName="date" (dateInput)="statusBarraProgresso('date')"/>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <mat-datepicker #picker ></mat-datepicker>
 
               <mat-error *ngIf="expenseForm.get('date')?.hasError('required')">
                 Select a category

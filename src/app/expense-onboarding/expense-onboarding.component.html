@@ -1,0 +1,35 @@
+<div>
+<p>Expensive Systems Brazil
+  <br /> Cadastre, liste e controle suas tarefas diárias e o custos...</p>
+
+
+<mat-card>
+  <mat-card-header>
+    <i>Analise suas expenses na Dashboard</i>
+    </mat-card-header>
+    <mat-card-content>
+    <mat-card-actions>
+  <button mat-flat-button class="edit-btn" [routerLink]="['/dashboard']">
+    <mat-icon>{{tipeIconDash}}</mat-icon>Dashboard
+  </button>
+</mat-card-actions>
+</mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+  <i>Incluir uma expense</i>
+</mat-card-header>
+    <mat-card-content>
+    <mat-card-actions>
+  <button mat-flat-button class="edit-btn" [routerLink]="['/add-expense']">
+    <mat-icon>{{tipeIconAdd}}</mat-icon> Adcionar Expense
+  </button>
+</mat-card-actions>
+</mat-card-content>
+</mat-card>
+</div>
+
+
+
+
