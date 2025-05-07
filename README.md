@@ -1,6 +1,6 @@
 ## INFO - projeto systemexpense3
 
-![O Projeto](assets/systemexpense3.png)
+![O Projeto](src/assets/systemexpense3.png)
 
 ## SOBRE O PROJETO:
 Criação um sistema web de cadastro de expenses, com front-end angular 19 e um servidor json-server;
