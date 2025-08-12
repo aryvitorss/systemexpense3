@@ -13,12 +13,24 @@
   background-color: lightblue !important;
   color: #222 !important;
   border-radius: 5%;
+  margin:1%;
+}
+
+.edit-btn:hover{
+    background-color: dodgerblue !important;
+    color: #fff !important;
 }
 
 .delete-btn {
   background-color: lightcoral !important;
-  color: #fff !important;
+  color: #222 !important;
   border-radius: 5%;
+  margin:1%;
+}
+
+.delete-btn:hover{
+    background-color: red !important;
+    color: #fff !important;
 }
 
 .mat-mdc-header-row{

@@ -17,6 +17,10 @@
   border-radius: 30px !important;
   }
 
+  mat-card:hover{
+    background-color: dodgerblue !important;
+  }
+
   mat-icon{
     width: 100% !important;
   }

@@ -1,6 +1,7 @@
 @import './app/expense-add-edit/expense-add-edit.component.css';
 @import './app/expense-add-grid/expense-add-grid.component.css';
 @import './app/app.component.css';
+@import "tailwindcss";
 
 html, body, .mat-sidenav-container { height: 100%;}
 body { margin: 0; font-family: Roboto,"Helvetica Neue",sans-serif;}
@@ -22,3 +23,7 @@ body { margin: 0; font-family: Roboto,"Helvetica Neue",sans-serif;}
   border-radius: 5%;
 }
 
+.mat-datepicker-content {
+      background-color: theme('colors.blue.500') !important;
+	  color: white !important;
+}

@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
   title = '::: CUSTOMERS EXPENSES SYSTEMS BRAZIL :::';
   tipeIcon = "list";
-  listaNav = ["/dashboard", "/add-expense"];
+  listaNav = ["/onboarding", "/dashboard", "/add-expense"];
   myControl = new FormControl('');
   filteredOptions!: Observable<string[]>;
 

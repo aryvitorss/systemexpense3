@@ -13,11 +13,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatProgressBar } from '@angular/material/progress-bar';
-
+import { PipeDataAjustadaPipe } from "../pipe-data-ajustada.pipe";
 
 @Component({
   selector: 'app-expense-add-edit',
-  imports: [ReactiveFormsModule, MatButtonModule, MatInputModule,MatSelectModule, MatDatepickerModule,MatCardModule, MatIconModule, MatFormFieldModule, CommonModule, MatProgressBar],
+  imports: [ReactiveFormsModule, MatButtonModule, MatInputModule,MatSelectModule, MatDatepickerModule,MatCardModule, MatIconModule, MatFormFieldModule, CommonModule, MatProgressBar, PipeDataAjustadaPipe],
   templateUrl: './expense-add-edit.component.html',
   styleUrl: './expense-add-edit.component.css'
 })
