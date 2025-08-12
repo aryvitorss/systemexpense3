@@ -5,12 +5,14 @@
 ## SOBRE O PROJETO:
 Criação um sistema web de cadastro de expenses, com front-end angular 19 e um servidor json-server;
 
-
 ## RUN FRONTEND:
 Porta/FrontEnd: http://localhost:4200/ rodar na pasta: ../systemexpense3
 
 ng serve ou ng s
-angular/cli: 19 Bootstrap 5 - CSS porta:4200
+angular/cli: 19 - porta:4200
+
+Bootstrap 5 - CSS
+tailwindcss": "^4.1.11",
 
 ## RUN BACKEND:
 Porta/Backend: http://localhost:3000/expenses rodar na pasta: memoteca/backend
